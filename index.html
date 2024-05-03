@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        article {
+            padding: 1rem;
+        }
+        p{
+            font-size: 16px;
+            color: blue;
+        }
+        nav a:hover {
+        text-decoration: underline;
+        color: #ff6600; /* Change the hover color as desired */
+    }
+    </style>
+    <script>
+        function addNavItem() {
+            const nav = document.querySelector('nav');
+            const newItem = document.createElement('a');
+            newItem.href = '#new-section'; // Change this to the desired section ID
+            newItem.textContent = 'New Section';
+            nav.appendChild(newItem);
+        }
+        function validateForm() {
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+
+        if (!nameInput.value || !emailInput.value || !messageInput.value) {
+            alert('Please fill out all required fields.');
+            return false;
+        }
+        return true;
+    }
+    </script>
+</head>
+<body>
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
+    <button onclick="addNavItem()">Add New Section</button>
+
+    <header>
+        <h1>My Webpage</h1>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <article>
+        <h2>Welcome to My Webpage</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, justo vel tincidunt lacinia, libero nisi bibendum urna, eu tincidunt nunc libero vel justo.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis error dolore veritatis qui laboriosam dolorem, alias placeat dolor, voluptatum aliquid est quis quod autem facere magnam sed saepe fugit nam rerum in illum deleniti ducimus earum? Aperiam alias molestiae atque animi voluptate velit a fuga ipsam, nihil dicta corporis nostrum facere minus nesciunt provident eaque accusamus voluptatibus nulla unde nam itaque mollitia ducimus vitae. Sequi totam numquam, eligendi reprehenderit similique a, soluta voluptatibus illo placeat aliquid ad cum laudantium facere illum quod. Cumque voluptas sunt itaque. Ipsam, totam laudantium. Suscipit exercitationem omnis tenetur voluptas neque eum. Accusantium obcaecati veniam quasi?
+        </p>
+        <div id="imageCarousel">
+            <img src="durk.jpg" alt="rappers">
+        </div>
+        <script>
+            let currentImage = 0;
+            const images = document.querySelectorAll('#imageCarousel img');
+    
+            function showNextImage() {
+                images[currentImage].style.display = 'none';
+                currentImage = (currentImage + 1) % images.length;
+                images[currentImage].style.display = 'block';
+            }
+    
+            setInterval(showNextImage, 3000);
+        </script>
+    </article>
+    <img src="durk.jpg" alt="rappers">
+    <script src="dk.js"></script>
+</body>
+</html>
